@@ -1,12 +1,15 @@
 import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from '@material-ui/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { sliderItem } from '../data'
+import png from '../images/1.png'
 
 const Container = styled.div`
 width: 100%;
 height: 100vh;
 display: flex;
 position: relative;
+overflow: hidden;
 `
 const Arrow = styled.div`
 width: 50px;
@@ -24,62 +27,98 @@ right: ${props=> props.direction=== "right" && '10px'};
 margin: auto;
 cursor: pointer;
 opacity: 0.5;
+z-index: 2;
 `
 const Wrapper = styled.div`
 height: 100%;
+
+display: flex;
+transition: all 1.5s ease;
+transform: translateX(${((props)=>props.slideIndex * -100)}vw);
 `
 
 const Slide = styled.div`
+
 height: 100vh;
-width: 100vh;
+width: 218vh;
 display: flex;
 align-items:center;
+justify-content: center;
+background-color: ${props=>props.bg}
 `
 
 
 const ImageCotainer = styled.div`
+display: flex;
 flex: 1;
 height: 100%;
+padding: 1px;
 `
 
 const Image = styled.img`
-height: 100%;`
+height: 90%;
+`
 
 const InfoContainer = styled.div`
 flex: 1;
-padding: 50px;
+padding: 30px;
 `
 
 const Title = styled.h1`
-
+font-size: 70px;
 `
 const Desription = styled.p`
+margin: 50px 0;
+font-size: 20px;
+font-weight: 500;
+letter-spacing: 3px;
 
 `
 const Buuton = styled.button`
-
+padding: 10px;
+cursor: pointer;
+background-color: transparent;
 `
 
 export default function Slider() {
+
+    const [slideIndex,setSlideIndex] = useState(0)
+  
+    let HandelClick =(direction)=>{
+        if(direction==="left"){
+            setSlideIndex(slideIndex >0 ? slideIndex-1 : 3 )
+        }else{
+            setSlideIndex(slideIndex < 3 ? slideIndex+1 : 0 )
+
+        }
+    }
+
+
     return (
         <Container>
-            <Arrow direction="left">
+            <Arrow direction="left" onClick={()=>HandelClick('left')}>
                 <KeyboardArrowLeftOutlined/>
             </Arrow>
-            <Wrapper>
-              <Slide>
-              <ImageCotainer>
-                  <Image src="https://source.unsplash.com/_3Q3tsJ01nc"/>
-              </ImageCotainer>
-              <InfoContainer>
+            <Wrapper slideIndex={slideIndex}>
+            
+             {sliderItem.map(item=>{
+                 const {id,img,title,description,bg}=item
+                 return(
 
-                  <Title> DIWALI BUMPPER OFFER  </Title>
-                  <Desription> CELEBIRATE THIS DIWALI WITH STYLE GET FLAT 30% OFF ON OUR LATEST ARRIVALS </Desription>
-                  <Buuton>SHOP NOW</Buuton>
-              </InfoContainer>
-              </Slide>
-              </Wrapper>
-            <Arrow direction="right">
+                     <Slide bg={bg} key={id}>
+                       <ImageCotainer>
+                         <Image src={png}/>
+                       </ImageCotainer>
+                       <InfoContainer>
+                         <Title> {title}  </Title>
+                         <Desription>{description}</Desription>
+                         <Buuton>SHOP NOW</Buuton>
+                       </InfoContainer>
+                     </Slide>
+                     )
+                 })}
+                     </Wrapper>
+                     <Arrow direction="right" onClick={()=>HandelClick('right')}>
                 <KeyboardArrowRightOutlined/>
             </Arrow>
         </Container>
