@@ -1,6 +1,8 @@
 import React from 'react'
 import { FavoriteBorder, Search,ShoppingCartOutlined} from '@material-ui/icons';
 import styled from 'styled-components'
+import { Mobile } from '../Responsive';
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
 opacity: 0;
@@ -42,7 +44,10 @@ background-color: white;
 `
 const Image = styled.img`
 height: 75%;
+width: 250px;
 z-index: 2;
+${Mobile({width:'200px'})}
+
 `
 
 
@@ -75,9 +80,11 @@ export default function Product({data}) {
                 <Icon>
                     <ShoppingCartOutlined/>
                 </Icon>
+            <Link to='productlist/1' style={{textDecoration:'none',color:'inherit' }}>
                 <Icon>
                     <Search/>
                 </Icon>
+            </Link>
                 <Icon>
                     <FavoriteBorder/>
                 </Icon>

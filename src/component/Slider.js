@@ -2,7 +2,7 @@ import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from '@material
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { sliderItem } from '../data'
-import png from '../images/1.png'
+import { Mobile } from '../Responsive'
 
 const Container = styled.div`
 width: 100%;
@@ -10,6 +10,7 @@ height: 100vh;
 display: flex;
 position: relative;
 overflow: hidden;
+${Mobile({display:'none'})}
 `
 const Arrow = styled.div`
 width: 50px;
@@ -40,11 +41,11 @@ transform: translateX(${((props)=>props.slideIndex * -100)}vw);
 const Slide = styled.div`
 
 height: 100vh;
-width: 218vh;
+width: 240vh;
 display: flex;
 align-items:center;
 justify-content: center;
-background-color: ${props=>props.bg}
+background-color: ${props=>props.bg};
 `
 
 
@@ -107,7 +108,7 @@ export default function Slider() {
 
                      <Slide bg={bg} key={id}>
                        <ImageCotainer>
-                         <Image src={png}/>
+                         <Image src={img}/>
                        </ImageCotainer>
                        <InfoContainer>
                          <Title> {title}  </Title>

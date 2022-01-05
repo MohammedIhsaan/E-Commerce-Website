@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Mobile } from '../Responsive'
+import NavBar from '../component/NavBar'
 const Container = styled.div`
 width: 100wh;
 height: 100vh;
@@ -32,6 +34,8 @@ margin: 20px 10px 0px 0px;
 padding: 10px;
 width: 100%;
 text-align: center;
+${Mobile({width:'70%'})}
+
 `
 const Button = styled.button`
 font-weight: 500;
@@ -42,6 +46,9 @@ cursor: pointer;
 `
 export default function Register() {
     return (
+            <div>
+
+            <NavBar/>
         <Container>
             <Wrapper>
                 <Title>CREATE AN ACCOUNT</Title>
@@ -57,5 +64,6 @@ export default function Register() {
             </Wrapper>
             
         </Container>
+            </div>
     )
 }

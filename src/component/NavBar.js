@@ -1,66 +1,75 @@
 import { Search,ShoppingCartOutlined} from '@material-ui/icons';
-import {Badge} from '@material-ui/core'
-import React from 'react'
-import styled  from 'styled-components'
+import {Badge} from '@material-ui/core';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled  from 'styled-components';
+import { Mobile  } from '../Responsive';
 
 const Container = styled.div`
-height: 60px;
+height: 50px;
 background-color: #3d3d3d;
+
+${Mobile({height:'50px'})}
 `;
 const Wrapper = styled.div`
 padding: 10px 20px;
 display:flex;
 justify-content:space-between;
 align-items: center;
+${Mobile({padding:'10px 0px'})}
+
 
 `
 const Left = styled.div`
 flex:1;
 display: flex;
 align-items: center;
-
 `
 
 const Langauge = styled.span`
 font-size: 14px; 
 cursor: pointer;
+${Mobile({display:'none'})}
 `
 const SearchContainer = styled.div`
 border: 0.5px solid ;
 display: flex;
 align-items: center;
-margin-left: 25px;
+margin-left: 45px;
 padding: 5px;
 background-color: #181818;
 border-radius: 20px;
-
-
+${Mobile({marginLeft:'15px'})}
 ` 
 const Input = styled.input`
 border: none;
+width: 300px;
+text-align: center;
+font-size: 18px;
 background-color: #181818;
+${Mobile({width:'50px'})}
 `
 
-const Center = styled.div`flex:1;
-text-align: center;
-`
 const Logo = styled.h1`
 font-weight: bold;
 color: #ffffff;
-
+${Mobile({fontSize:'24px'})}
 `
 
 const Right = styled.div`flex:1;
 display: flex;
 align-items: center;
 justify-content: flex-end ;
+${Mobile({justifyContent:'center',flex:'2'})}
+
 `
 
 const MenuItem = styled.div`
-font-size: 14px;
+font-size: 20px;
 cursor: pointer; 
 margin-left: 25px;
 color: #ffffff;
+${Mobile({marginLeft:'8px',fontSize:'14px'})}
 
 
 `
@@ -70,21 +79,23 @@ export default function NavBar() {
         <Container>
             <Wrapper>
               <Left>
-                <Langauge>Left</Langauge>
+                <Logo><Link style={{color:'inherit',textDecoration:'none'}} to= '/'>IHSAAN.</Link></Logo>
                 <SearchContainer>
-                <Input/>
-                <Search style={{color:"gray",fontSize:20}}/>
+                <Input placeholder='serach'/>
+                <Search  style={{color:"gray",fontSize:20}}/>
                 </SearchContainer>
               </Left>
-              <Center>
-                <Logo>IHSAAN.</Logo>
-              </Center>
               <Right>
-                <MenuItem>Register</MenuItem>
-                <MenuItem>Sign in</MenuItem>
+                <MenuItem>
+                <Link style={{color:'inherit',textDecoration:'none'}} to= '/register'>Register</Link>
+                </MenuItem>
+                <MenuItem>
+                <Link style={{color:'inherit',textDecoration:'none'}} to= '/login'>Sign in</Link>          
+                </MenuItem>
                 <MenuItem>
                    <Badge badgeContent={4}>
-                        <ShoppingCartOutlined />
+                   <Link style={{color:'inherit',textDecoration:'none'}} to= '/cart'><ShoppingCartOutlined /></Link>
+                        
                    </Badge>
                 </MenuItem>
               </Right>

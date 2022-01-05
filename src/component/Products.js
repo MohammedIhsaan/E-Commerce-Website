@@ -32,7 +32,6 @@ export default function Products() {
     return (
         <Container>
             {data.map(item=> <Product data={item} key={item.id}/>)}
-            
         </Container>
     )
 }

@@ -2,9 +2,11 @@ import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } fro
 import React from 'react'
 import styled from 'styled-components'
 import paymentPng from '../images/payment.png'
+import { Mobile } from '../Responsive'
 
 const Container = styled.div`
 display: flex;
+${Mobile({flexDirection:'column'})}
 
 `
 const Left = styled.div`
@@ -37,6 +39,7 @@ margin: 5px;
 const Center = styled.div`
 flex:1;
 padding: 20px;
+${Mobile({display:'none'})}
 `
 const Title = styled.h1`
 font-size: 20px;
@@ -58,6 +61,7 @@ margin-bottom: 10px;
 const Right = styled.div`
 flex:1;
 padding: 20px;
+${Mobile({backgroundColor:'lightgray'})}
 
 `
 const ContactItem = styled.div`

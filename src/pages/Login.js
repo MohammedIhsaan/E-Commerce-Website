@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import NavBar from '../component/NavBar'
+import { Mobile } from '../Responsive'
 const Container = styled.div`
 width: 100wh;
 height: 100vh;
@@ -32,6 +34,8 @@ margin: 20px 10px 0px 0px;
 padding: 10px;
 width: 100%;
 text-align: center;
+${Mobile({width:'70%'})}
+
 `
 const Button = styled.button`
 font-weight: 500;
@@ -39,7 +43,10 @@ margin: 20px 10px 0px 0px;
 padding: 10px;
 width: 300px;
 cursor: pointer;
+${Mobile({width:'100%'})}
+
 `
+
 const Link = styled.a`
 margin: 5px 0px;
 cursor: pointer;
@@ -49,6 +56,8 @@ text-decoration: underline;
 
 export default function Login() {
     return (
+        <>
+        <NavBar/>
         <Container>
             <Wrapper>
                 <Title>SIGN IN</Title>
@@ -62,6 +71,7 @@ export default function Login() {
             </Wrapper>
             
         </Container>
+        </>
     )
 }
 

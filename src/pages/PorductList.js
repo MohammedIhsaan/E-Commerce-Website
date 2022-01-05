@@ -5,6 +5,7 @@ import Footer from '../component/Footer'
 import NavBar from '../component/NavBar'
 import NewsLetter from '../component/NewsLetter'
 import Products from '../component/Products'
+import { Mobile } from '../Responsive'
 
 const Container = styled.div``
 const Title = styled.h1`
@@ -15,17 +16,22 @@ justify-content: space-between;
 `
 const Filter = styled.div`
 margin: 20px;
-
+${Mobile({display:'flex',flexDirection:'column',alignItem:'center'})}
+flex: ${props=>props.type==='filter'&& '2'};
+flex: ${props=>props.type==='sort'&& '1'}
 `
 const FilterText = styled.span`
 font-size:20px;
 font-weight: 600;
 margin-right: 20px;
+padding: 10px;
 `
 
 const Select = styled.select`
 margin-right:20px;
 padding: 10px;
+${Mobile({margin:'8px 0px',})}
+
 `
 const Option = styled.option``
 
@@ -36,7 +42,7 @@ export default function PorductList() {
             <NavBar/> 
             <Title>Dresses</Title>
             <FilterContainer>
-                <Filter>
+                <Filter type='filter'>
                     <FilterText> Filter Products:</FilterText>
                     <Select>
                         <Option disabled>Color</Option>
@@ -57,7 +63,7 @@ export default function PorductList() {
                         
                     </Select>
                 </Filter>
-                <Filter>
+                <Filter type='sort'>
                     <FilterText> Sort Products:</FilterText>
                     <Select>
                         <Option selected>Newest</Option>
