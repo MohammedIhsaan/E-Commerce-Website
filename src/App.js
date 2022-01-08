@@ -14,12 +14,12 @@ const App = () => {
   return(
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/login' element={<Login/>} />
-      <Route path='/register' element={<Register/>} />
-      <Route path='/cart' element={<Cart/>} />
-      <Route path='/productlist' element={<PorductList/>} />
-      <Route path='/productlist/1' element={<SingleProduct/>} />
+      <Route path='/E-Commerce-Website' element={<Home/>} />s
+      <Route path='/E-Commerce-Website/login' element={<Login/>} />
+      <Route path='/E-Commerce-Website/register' element={<Register/>} />
+      <Route path='/E-Commerce-Website/cart' element={<Cart/>} />
+      <Route path='/E-Commerce-Website/productlist' element={<PorductList/>} />
+      <Route path='/E-Commerce-Website/productlist/1' element={<SingleProduct/>} />
     </Routes>
     
     </BrowserRouter>

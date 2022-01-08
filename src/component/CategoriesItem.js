@@ -47,7 +47,7 @@ export default function CategoriesItem({data}) {
             <Image src={data.image}/>
             <Info>
                 <Title> {data.title.split(' ')[0]}  {data.title.split(' ')[1]} </Title>
-                <Button><Link style={{color:'inherit',textDecoration:'none'}} to= '/productlist/1'>SHOP NOW</Link> </Button>
+                <Button><Link style={{color:'inherit',textDecoration:'none'}} to= '/E-Commerce-Website/productlist/1'>SHOP NOW</Link> </Button>
             </Info>
         </Container>
     )

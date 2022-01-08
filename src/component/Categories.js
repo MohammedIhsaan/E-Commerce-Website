@@ -9,7 +9,7 @@ display: flex;
 flex-direction: column;
 padding: 20px;
 justify-content: space-between;
-${Mobile({padding:'0px',flexDirection:"column",width:'80%'})}
+${Mobile({padding:'0px',flexDirection:"column"})}
 `
 const Top = styled.div`
 padding: 10px;

@@ -80,7 +80,7 @@ export default function Product({data}) {
                 <Icon>
                     <ShoppingCartOutlined/>
                 </Icon>
-            <Link to='productlist/1' style={{textDecoration:'none',color:'inherit' }}>
+            s<Link to='/E-Commerce-Website/productlist/1' style={{textDecoration:'none',color:'inherit' }}>
                 <Icon>
                     <Search/>
                 </Icon>

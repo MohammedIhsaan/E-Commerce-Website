@@ -47,7 +47,7 @@ width: 300px;
 text-align: center;
 font-size: 18px;
 background-color: #181818;
-${Mobile({width:'50px'})}
+${Mobile({width:'100px'})}
 `
 
 const Logo = styled.h1`
@@ -79,7 +79,7 @@ export default function NavBar() {
         <Container>
             <Wrapper>
               <Left>
-                <Logo><Link style={{color:'inherit',textDecoration:'none'}} to= '/'>IHSAAN.</Link></Logo>
+                <Logo><Link style={{color:'inherit',textDecoration:'none'}} to= '/E-Commerce-Website'>IHSAAN.</Link></Logo>
                 <SearchContainer>
                 <Input placeholder='serach'/>
                 <Search  style={{color:"gray",fontSize:20}}/>
@@ -87,14 +87,14 @@ export default function NavBar() {
               </Left>
               <Right>
                 <MenuItem>
-                <Link style={{color:'inherit',textDecoration:'none'}} to= '/register'>Register</Link>
+                <Link style={{color:'inherit',textDecoration:'none'}} to= '/E-Commerce-Website/register'>Register</Link>
                 </MenuItem>
                 <MenuItem>
-                <Link style={{color:'inherit',textDecoration:'none'}} to= '/login'>Sign in</Link>          
+                <Link style={{color:'inherit',textDecoration:'none'}} to= '/E-Commerce-Website/login'>Sign in</Link>          
                 </MenuItem>
                 <MenuItem>
                    <Badge badgeContent={4}>
-                   <Link style={{color:'inherit',textDecoration:'none'}} to= '/cart'><ShoppingCartOutlined /></Link>
+                   <Link style={{color:'inherit',textDecoration:'none'}} to= '/E-Commerce-Website/cart'><ShoppingCartOutlined /></Link>
                         
                    </Badge>
                 </MenuItem>
